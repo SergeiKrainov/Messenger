@@ -15,6 +15,13 @@ class LoginViewController: UIViewController {
         return scrollView
     }()
     
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     private let emailField: UITextField = {
         let textFeild = UITextField()
         textFeild.autocapitalizationType = .none
@@ -34,7 +41,7 @@ class LoginViewController: UIViewController {
         let textFeild = UITextField()
         textFeild.autocapitalizationType = .none
         textFeild.autocorrectionType = .no
-        textFeild.returnKeyType = .continue
+        textFeild.returnKeyType = .done
         textFeild.layer.cornerRadius = 12
         textFeild.layer.borderWidth = 1
         textFeild.layer.borderColor = UIColor.lightGray.cgColor
@@ -46,12 +53,15 @@ class LoginViewController: UIViewController {
         return textFeild
     }()
     
-    
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    private let loginButton: UIButton = {
+       let button = UIButton()
+        button.setTitle("Log in", for: .normal)
+        button.backgroundColor = .link
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -65,10 +75,18 @@ class LoginViewController: UIViewController {
                                                             target: self,
                                                             action: #selector(didTapRegister))
         
+        loginButton.addTarget(self,
+                             action: #selector(loginButtonTapped),
+                             for: .touchUpInside)
+        
+        emailField.delegate = self
+        paswordField.delegate = self
+        
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(emailField)
         scrollView.addSubview(paswordField)
+        scrollView.addSubview(loginButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -87,6 +105,32 @@ class LoginViewController: UIViewController {
                                     y: emailField.bottom+10,
                                     width: scrollView.width-60,
                                     height: 52)
+        loginButton.frame = CGRect(x: 30,
+                                  y: paswordField.bottom+10,
+                                  width: scrollView.width-60,
+                                  height: 52)
+    }
+    
+    @objc private func loginButtonTapped() {
+        
+        emailField.becomeFirstResponder()
+        paswordField.becomeFirstResponder()
+        
+        guard let email = emailField.text, let password = paswordField.text,
+              !email.isEmpty, !password.isEmpty, password.count >= 6 else {
+                  alertUserLoginError()
+                  return }
+    }
+    
+    func alertUserLoginError() {
+        let alert = UIAlertController(title: "Woops",
+                                      message: "Please inter all informationto log in",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismis",
+                                      style: .cancel,
+                                      handler: nil))
+        present(alert, animated: true)
     }
     
     @objc private func didTapRegister() {
@@ -96,4 +140,19 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == emailField {
+            paswordField.becomeFirstResponder()
+        }
+        else if textField == paswordField {
+            loginButtonTapped()
+        }
+        
+        return true
+    }
 }
