@@ -2,13 +2,33 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIRequiredDeviceCapabilities</key>
+	<key>CFBundleURLTypes</key>
 	<array>
-		<string></string>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1108027863110677</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.866624331389-6id7oovhrfrcifnd6oiue4c8d2usbr30</string>
+			</array>
+		</dict>
 	</array>
-	<key>UISupportedInterfaceOrientations</key>
+	<key>FacebookAppID</key>
+	<string>1108027863110677</string>
+	<key>FacebookClientToken</key>
+	<string>25226d3746b3337493f6b777c4310b94</string>
+	<key>FacebookDisplayName</key>
+	<string>My Messenger</string>
+	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -29,29 +49,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow access to select a photo for your profile</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Please allow access to take a profile picture</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fbAPP-ID</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>APP-ID</string>
-    <key>FacebookClientToken</key>
-    <string>CLIENT-TOKEN</string>
-    <key>FacebookDisplayName</key>
-    <string>APP-NAME</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-share-api</string>
-    </array>
 </dict>
 </plist>
