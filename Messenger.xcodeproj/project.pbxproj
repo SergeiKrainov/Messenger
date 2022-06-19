@@ -22,6 +22,7 @@
 		A576A9542840E04B002075CD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576A9532840E04B002075CD /* ProfileViewController.swift */; };
 		A58FB15D2850A12E00EBA860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58FB15C2850A12E00EBA860 /* GoogleService-Info.plist */; };
 		A5B423D7284379820002E382 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B423D6284379820002E382 /* Extensions.swift */; };
+		A5E0B016285DD84B00595039 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0B015285DD84B00595039 /* ChatViewController.swift */; };
 		A5FE7571285226FB00D3BAD7 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE7570285226FB00D3BAD7 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		A576A9532840E04B002075CD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A58FB15C2850A12E00EBA860 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5B423D6284379820002E382 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A5E0B015285DD84B00595039 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A5FE7570285226FB00D3BAD7 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C2A85618D6E78434D5D8C749 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				A576A94F2840DFE8002075CD /* VideoPlayerViewController.swift */,
 				A576A9512840E01E002075CD /* NewConversationViewController.swift */,
 				A576A9532840E04B002075CD /* ProfileViewController.swift */,
+				A5E0B015285DD84B00595039 /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				A576A9302840D894002075CD /* AppDelegate.swift in Sources */,
 				A576A9542840E04B002075CD /* ProfileViewController.swift in Sources */,
 				A576A9322840D894002075CD /* SceneDelegate.swift in Sources */,
+				A5E0B016285DD84B00595039 /* ChatViewController.swift in Sources */,
 				A576A94E2840DFC8002075CD /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
