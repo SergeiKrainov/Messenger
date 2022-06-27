@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ANQ-Ye-SkK">
-                                <rect key="frame" x="8" y="140" width="406" height="673"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -99,7 +99,7 @@
                             <constraint firstItem="FPr-nu-wB2" firstAttribute="bottom" secondItem="ANQ-Ye-SkK" secondAttribute="bottom" id="3HR-Vf-9jE"/>
                             <constraint firstItem="FPr-nu-wB2" firstAttribute="trailing" secondItem="ANQ-Ye-SkK" secondAttribute="trailing" id="8z8-1e-GDz"/>
                             <constraint firstItem="ANQ-Ye-SkK" firstAttribute="top" secondItem="FPr-nu-wB2" secondAttribute="top" id="AcQ-CG-TW0"/>
-                            <constraint firstItem="ANQ-Ye-SkK" firstAttribute="leading" secondItem="FPr-nu-wB2" secondAttribute="leading" constant="8" id="GY6-Qg-vM3"/>
+                            <constraint firstItem="ANQ-Ye-SkK" firstAttribute="leading" secondItem="FPr-nu-wB2" secondAttribute="leading" id="GY6-Qg-vM3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="HVR-MR-x8E"/>
