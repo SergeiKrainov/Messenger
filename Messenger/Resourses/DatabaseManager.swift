@@ -118,7 +118,7 @@ extension DatabaseManager {
         
         let ref = database.child("\(safeEmail)")
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
             guard var userNode = snapshot.value as? [String: Any] else {
                 completion(false)
                 print("user not found")
@@ -164,6 +164,32 @@ extension DatabaseManager {
                     "is_read": false
                 ]
             ]
+            
+            let recipient_newConverstionData: [String: Any] = [
+                "id": conversationId,
+                "other_user_email": safeEmail,
+                "name": "Self",
+                "latest_message": [
+                    "date": dateString,
+                    "message": message,
+                    "is_read": false
+                ]
+            ]
+            
+            // update recipien user conversation entry
+            self?.database.child("\(otherUserEmail)/conversations").observeSingleEvent(of: .value, with: { [weak self] snapshot in
+                if var conversations = snapshot.value as? [[String: Any]] {
+                    //append
+                    conversations.append(recipient_newConverstionData)
+                    self?.database.child("\(otherUserEmail)/conversations").setValue(conversations)
+                }
+                else {
+                    // create
+                    self?.database.child("\(otherUserEmail)/conversations").setValue([recipient_newConverstionData])
+                }
+            })
+            
+            // update current user conversation entry
             if var conversations = userNode["conversations"] as? [[String: Any]] {
                 // conversation arry exists for current user
                 // you should append

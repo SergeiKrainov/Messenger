@@ -72,18 +72,17 @@ class ChatViewController: MessagesViewController {
             return nil
         }
         
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+        
         return  Sender(photoURL: "",
-                       senderId: email,
-                       displayName: "Joe Smith")
+                       senderId: safeEmail,
+                       displayName: "Me")
     }
     
     init(with email: String, id: String?) {
         self.otherUserEmail = email
         self.conversationId = id
         super.init(nibName: nil, bundle: nil)
-        if let conversationId = conversationId {
-            listenTomessage(id: conversationId)
-        }
     }
     
     required init?(coder: NSCoder) {
@@ -100,7 +99,7 @@ class ChatViewController: MessagesViewController {
         messageInputBar.delegate = self
     }
     
-    private func listenTomessage(id: String) {
+    private func listenTomessage(id: String, shouldScroollToBottom: Bool) {
         DatabaseManager.shared.getAllMEssagesForConversation(with: id, completion: { [weak self] result in
             switch result {
             case .success(let messages):
@@ -112,6 +111,10 @@ class ChatViewController: MessagesViewController {
                 
                 DispatchQueue.main.async {
                     self?.messagesCollectionView.reloadDataAndKeepOffset()
+                    if shouldScroollToBottom {
+                        self?.messagesCollectionView.scrollToBottom()
+                    }
+                    
                 }
                 
             case .failure(let error):
@@ -123,6 +126,10 @@ class ChatViewController: MessagesViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         messageInputBar.inputTextView.becomeFirstResponder()
+        
+        if let conversationId = conversationId {
+            listenTomessage(id: conversationId, shouldScroollToBottom: true)
+        }
     }
     
     
