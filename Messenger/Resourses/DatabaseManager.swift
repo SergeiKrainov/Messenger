@@ -365,14 +365,26 @@ extension DatabaseManager {
                 if type == "photo" {
                     //photo
                     guard let imageUrl = URL(string: content),
-                    let placeholder = UIImage(systemName: "plus") else {
-                        return nil
-                    }
+                          let placeholder = UIImage(systemName: "plus") else {
+                              return nil
+                          }
                     let media = Media(url: imageUrl,
                                       image: nil,
                                       placeholderImage: placeholder,
                                       size: CGSize(width: 300, height: 300))
                     kind = .photo(media)
+                }
+                else if type == "video" {
+                    //video
+                    guard let videUrl = URL(string: content),
+                          let placeholder = UIImage(named: "video_placeholder") else {
+                              return nil
+                          }
+                    let media = Media(url: videUrl,
+                                      image: nil,
+                                      placeholderImage: placeholder,
+                                      size: CGSize(width: 300, height: 300))
+                    kind = .video(media)
                 }
                 else {
                     kind = .text(content)
@@ -435,7 +447,10 @@ extension DatabaseManager {
                     message = targetUrl
                 }
                 break
-            case .video(_):
+            case .video(let mediaItem):
+                if let targetUrl = mediaItem.url?.absoluteString {
+                    message = targetUrl
+                }
                 break
             case .location(_):
                 break

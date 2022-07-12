@@ -90,15 +90,15 @@ class ConversationsViewController: UIViewController {
     @objc func didTapComposeButton() {
         let vc = NewConversationViewController()
         vc.completion = { [weak self] result in
-            print("\(result)")
             self?.createNewConversation(result: result)
         }
         let navVc = UINavigationController(rootViewController: vc)
         present(navVc, animated: true)
     }
     
-    private func createNewConversation(result: [String: String]) {
-        guard let name = result["name"], let email = result["email"] else { return }
+    private func createNewConversation(result: SearchResult) {
+        let name = result.name
+        let email = result.email
         let vc = ChatViewController(with: email, id: nil)
         vc.isNewConversation = true
         vc.title = name
