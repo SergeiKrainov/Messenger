@@ -59,7 +59,6 @@ class ConversationsViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(noConversationLabel)
         setUpTableView()
-        fetchConversation()
         startListenForConversation()
         
         loginObserver = NotificationCenter.default.addObserver(forName: .didLogInNotification, object: nil, queue: .main, using: { [weak self] _ in
@@ -84,8 +83,12 @@ class ConversationsViewController: UIViewController {
             case .success(let conversations):
                 print("Succesfully got converastion models")
                 guard !conversations.isEmpty else {
+                    self?.tableView.isHidden = true
+                    self?.noConversationLabel.isHidden = false
                     return
                 }
+                self?.noConversationLabel.isHidden = true
+                self?.tableView.isHidden = false
                 self?.conversations = conversations
                 
                 DispatchQueue.main.async {
@@ -93,6 +96,8 @@ class ConversationsViewController: UIViewController {
                 }
                 
             case .failure(let error):
+                self?.tableView.isHidden = true
+                self?.noConversationLabel.isHidden = false
                 print("failed to get convos: \(error)")
             }
         })
@@ -156,6 +161,11 @@ class ConversationsViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         tableView.frame = view.bounds
+        noConversationLabel.frame = CGRect(x: 10,
+                                           y: (view.height-100)/2,
+                                           width: view.width-20,
+                                           height: 100)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -178,10 +188,7 @@ class ConversationsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    private func fetchConversation() {
-        tableView.isHidden = false
-    }
+     
 }
 
 extension ConversationsViewController: UITableViewDelegate, UITableViewDataSource {
