@@ -41,7 +41,7 @@ class RegisterViewController: UIViewController {
         textFeild.placeholder = "First name . . ."
         textFeild.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         textFeild.leftViewMode = .always
-        textFeild.backgroundColor = .white
+        textFeild.backgroundColor = .secondarySystemBackground
         return textFeild
     }()
     
@@ -56,7 +56,7 @@ class RegisterViewController: UIViewController {
         textFeild.placeholder = "Last name . . ."
         textFeild.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         textFeild.leftViewMode = .always
-        textFeild.backgroundColor = .white
+        textFeild.backgroundColor = .secondarySystemBackground
         return textFeild
     }()
     
@@ -71,7 +71,7 @@ class RegisterViewController: UIViewController {
         textFeild.placeholder = "Email adress . . ."
         textFeild.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         textFeild.leftViewMode = .always
-        textFeild.backgroundColor = .white
+        textFeild.backgroundColor = .secondarySystemBackground
         return textFeild
     }()
     
@@ -86,7 +86,7 @@ class RegisterViewController: UIViewController {
         textFeild.placeholder = "Password . . ."
         textFeild.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         textFeild.leftViewMode = .always
-        textFeild.backgroundColor = .white
+        textFeild.backgroundColor = .secondarySystemBackground
         textFeild.isSecureTextEntry = true
         return textFeild
     }()
@@ -106,7 +106,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Register"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
                                                             style: .done,

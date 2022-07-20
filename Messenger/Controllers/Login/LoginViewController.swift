@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         textFeild.placeholder = "Email adress . . ."
         textFeild.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         textFeild.leftViewMode = .always
-        textFeild.backgroundColor = .white
+        textFeild.backgroundColor = .secondarySystemBackground
         return textFeild
     }()
     
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
         textFeild.placeholder = "Password . . ."
         textFeild.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         textFeild.leftViewMode = .always
-        textFeild.backgroundColor = .white
+        textFeild.backgroundColor = .secondarySystemBackground
         textFeild.isSecureTextEntry = true
         return textFeild
     }()
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
         title = "Log in"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
                                                             style: .done,
