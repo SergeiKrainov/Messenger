@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import GoogleSignIn
 import JGProgressHUD
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)
     
@@ -196,7 +196,6 @@ class LoginViewController: UIViewController {
             
             UserDefaults.standard.set(email, forKey: "email")
            
-            
             print("Logged in user: \(user)")
             strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         })
@@ -219,9 +218,6 @@ class LoginViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -234,7 +230,6 @@ extension LoginViewController: UITextFieldDelegate {
         else if textField == paswordField {
             loginButtonTapped()
         }
-        
         return true
     }
 }
@@ -260,7 +255,6 @@ extension LoginViewController: LoginButtonDelegate {
         facebookRequest.start(completion: { _, result, error in
             guard let result = result as? [String: Any], error == nil else {
                 return
-                
             }
             
             print(result)
@@ -324,19 +318,11 @@ extension LoginViewController: LoginButtonDelegate {
                     if let error = error {
                         print("Facebook credential login failed, MFA may be needed - \(error)")
                     }
-                    
                     return
                 }
-                
                 print("Successfully logged user in")
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
             })
-            
-            
         })
-        
-        
     }
-    
-    
 }

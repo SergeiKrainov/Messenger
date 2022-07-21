@@ -18,7 +18,6 @@
 		A576A94A2840DF71002075CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576A9492840DF71002075CD /* LoginViewController.swift */; };
 		A576A94C2840DF94002075CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576A94B2840DF94002075CD /* RegisterViewController.swift */; };
 		A576A94E2840DFC8002075CD /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576A94D2840DFC8002075CD /* PhotoViewerViewController.swift */; };
-		A576A9502840DFE8002075CD /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576A94F2840DFE8002075CD /* VideoPlayerViewController.swift */; };
 		A576A9522840E01E002075CD /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576A9512840E01E002075CD /* NewConversationViewController.swift */; };
 		A576A9542840E04B002075CD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576A9532840E04B002075CD /* ProfileViewController.swift */; };
 		A57A12A52860729800DDF15C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A12A42860729800DDF15C /* StorageManager.swift */; };
@@ -27,6 +26,10 @@
 		A5B423D7284379820002E382 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B423D6284379820002E382 /* Extensions.swift */; };
 		A5B79183286F50890030C0B5 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B79182286F50890030C0B5 /* ConversationTableViewCell.swift */; };
 		A5E0B016285DD84B00595039 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0B015285DD84B00595039 /* ChatViewController.swift */; };
+		A5F7908D28894FF7000E1BBD /* ConversationsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7908C28894FF7000E1BBD /* ConversationsModels.swift */; };
+		A5F7908F28895235000E1BBD /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7908E28895235000E1BBD /* ChatModels.swift */; };
+		A5F79091288952FA000E1BBD /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F79090288952FA000E1BBD /* SearchResult.swift */; };
+		A5F7909328895371000E1BBD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7909228895371000E1BBD /* ProfileViewModel.swift */; };
 		A5FE7571285226FB00D3BAD7 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE7570285226FB00D3BAD7 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +48,6 @@
 		A576A9492840DF71002075CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A576A94B2840DF94002075CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A576A94D2840DFC8002075CD /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
-		A576A94F2840DFE8002075CD /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		A576A9512840E01E002075CD /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		A576A9532840E04B002075CD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A57A12A42860729800DDF15C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		A5B79182286F50890030C0B5 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		A5E0B015285DD84B00595039 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A5E74DB62874AB7B00C23AEE /* Messenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Messenger.entitlements; sourceTree = "<group>"; };
+		A5F7908C28894FF7000E1BBD /* ConversationsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConversationsModels.swift; path = Messenger/ConversationsModels.swift; sourceTree = SOURCE_ROOT; };
+		A5F7908E28895235000E1BBD /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatModels.swift; path = Messenger/ChatModels.swift; sourceTree = SOURCE_ROOT; };
+		A5F79090288952FA000E1BBD /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResult.swift; path = Messenger/SearchResult.swift; sourceTree = SOURCE_ROOT; };
+		A5F7909228895371000E1BBD /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewModel.swift; path = Messenger/ProfileViewModel.swift; sourceTree = SOURCE_ROOT; };
 		A5FE7570285226FB00D3BAD7 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C2A85618D6E78434D5D8C749 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +133,6 @@
 				A576A9332840D894002075CD /* ConversationsViewController.swift */,
 				A5A6081F28427441000B8609 /* Login */,
 				A576A94D2840DFC8002075CD /* PhotoViewerViewController.swift */,
-				A576A94F2840DFE8002075CD /* VideoPlayerViewController.swift */,
 				A576A9512840E01E002075CD /* NewConversationViewController.swift */,
 				A576A9532840E04B002075CD /* ProfileViewController.swift */,
 				A5E0B015285DD84B00595039 /* ChatViewController.swift */,
@@ -150,6 +155,10 @@
 		A576A9452840DC73002075CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A5F7908C28894FF7000E1BBD /* ConversationsModels.swift */,
+				A5F7908E28895235000E1BBD /* ChatModels.swift */,
+				A5F79090288952FA000E1BBD /* SearchResult.swift */,
+				A5F7909228895371000E1BBD /* ProfileViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,13 +335,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A576A94A2840DF71002075CD /* LoginViewController.swift in Sources */,
+				A5F7909328895371000E1BBD /* ProfileViewModel.swift in Sources */,
 				A5944745287DDD6F00FD598D /* NewConversationCell.swift in Sources */,
 				A5FE7571285226FB00D3BAD7 /* DatabaseManager.swift in Sources */,
+				A5F7908F28895235000E1BBD /* ChatModels.swift in Sources */,
 				A576A94C2840DF94002075CD /* RegisterViewController.swift in Sources */,
 				A576A9522840E01E002075CD /* NewConversationViewController.swift in Sources */,
 				A576A9342840D894002075CD /* ConversationsViewController.swift in Sources */,
-				A576A9502840DFE8002075CD /* VideoPlayerViewController.swift in Sources */,
 				A5B423D7284379820002E382 /* Extensions.swift in Sources */,
+				A5F79091288952FA000E1BBD /* SearchResult.swift in Sources */,
 				A576A9302840D894002075CD /* AppDelegate.swift in Sources */,
 				A576A9542840E04B002075CD /* ProfileViewController.swift in Sources */,
 				A576A9322840D894002075CD /* SceneDelegate.swift in Sources */,
@@ -340,6 +351,7 @@
 				A5E0B016285DD84B00595039 /* ChatViewController.swift in Sources */,
 				A576A94E2840DFC8002075CD /* PhotoViewerViewController.swift in Sources */,
 				A57A12A52860729800DDF15C /* StorageManager.swift in Sources */,
+				A5F7908D28894FF7000E1BBD /* ConversationsModels.swift in Sources */,
 				A55EC7022885614400A3B52E /* LocationPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
